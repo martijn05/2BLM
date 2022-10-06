@@ -31,11 +31,8 @@
   <div style="border: 1px solid black;">
     <h2>Registreren</h2>
     <form action="">
-      <label for="voornaam">Voornaam</label><br>
-      <input type="text" name="voornaam" id="voornaam" placeholder="Voornaam">
-      <br>
-      <label for="achternaam">Achternaam</label><br>
-      <input type="text" name="achternaam" id="achternaam" placeholder="Achternaam">
+      <label for="naam">Naam</label><br>
+      <input type="text" name="naam" id="naam" placeholder="Naam">
       <br>
       <label for="email">E-mailadres</label><br>
       <input type="email" name="email" id="email" placeholder="E-mailadres">
@@ -45,9 +42,6 @@
       <br>
       <label for="wachtwoord">Wachtwoord</label><br>
       <input type="password" name="wachtwoord" id="wachtwoord" placeholder="Wachtwoord">
-      <br>
-      <label for="wachtwoord2">Wachtwoord bevestigen</label><br>
-      <input type="password" name="wachtwoord2" id="wachtwoord2" placeholder="Wachtwoord bevestigen">
       <br>
       <input type="submit" value="Registreren">
     </form>
