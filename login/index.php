@@ -5,6 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>2BLM | Inloggen</title>
+  <link rel="stylesheet" href="../style/login.css">
+  <link rel="stylesheet" href="../style/style.css">
 </head>
 
 <script>
@@ -39,24 +41,28 @@
 </script>
 
 <body>
-  <h1>2BLM</h1>
+  <div id="wrapper">
+    <div id="block1">
+      <h1>2BLM</h1>
+    </div>
 
-  <!-- inloggen -->
-  <div style="border: 1px solid black;" id="inlogDiv">
-    <h2>Inloggen</h2>
-    <form action="">
-      <label for="emailTelefoon">E-mailadres of telefoonnummer</label><br>
-      <input type="text" name="emailTelefoon" id="emailTelefoon" placeholder="E-mailadres of telefoonnummer">
-      <br>
-      <label for="wachtwoord">Wachtwoord</label><br>
-      <input type="password" name="wachtwoord" id="wachtwoord" placeholder="Wachtwoord">
-      <br>
-      <a style="color: red;" onclick="showHideDivs('pv');">Wachtwoord vergeten</a>
-      <br>
-      <input type="submit" value="Inloggen">
-    </form>
-    <button>Icon - Inloggen met Google</button>
-    <p>Nog geen account? <button onclick="showHideDivs('r');">Registreer nu!</button></p>
+    <!-- inloggen -->
+    <div id="inlogDiv">
+      <h2>Inloggen</h2>
+      <form action="">
+        <label for="emailTelefoon">E-mailadres of telefoonnummer</label><br>
+        <input type="text" name="emailTelefoon" id="emailTelefoon" placeholder="E-mailadres of telefoonnummer">
+        <br>
+        <label for="wachtwoord">Wachtwoord</label><br>
+        <input type="password" name="wachtwoord" id="wachtwoord" placeholder="Wachtwoord">
+        <br>
+        <a style="color: red;" onclick="showHideDivs('pv');">Wachtwoord vergeten</a>
+        <br>
+        <input type="submit" value="Log in" id="LoginButton">
+      </form>
+      <button id="LoginGoogle">Icon - Inloggen met Google</button>
+      <p>Nog geen account? <button onclick="showHideDivs('r');" id="Registreer">Registreer nu!</button></p>
+    </div>
   </div>
 
   <!-- registreren -->
