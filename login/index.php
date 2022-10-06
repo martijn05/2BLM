@@ -6,11 +6,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>2BLM | Inloggen</title>
 </head>
+
+<script>
+  function showHideDivs(div) {
+    var iDiv = document.getElementById("inlogDiv");
+    var rDiv = document.getElementById("registreerDiv");
+    var pvDiv = document.getElementById("pasvergDiv");
+
+    switch (div) {
+      case "i":
+        iDiv.style.display = "block";
+        rDiv.style.display = "none";
+        pvDiv.style.display = "none";
+        break;
+      
+      case "r":
+        iDiv.style.display = "none";
+        rDiv.style.display = "block";
+        pvDiv.style.display = "none";
+        break;
+
+      case "pv":
+        iDiv.style.display = "none";
+        rDiv.style.display = "none";
+        pvDiv.style.display = "block";
+        break;
+
+      default:
+        break;
+    }
+  }
+</script>
+
 <body>
   <h1>2BLM</h1>
 
   <!-- inloggen -->
-  <div style="border: 1px solid black;">
+  <div style="border: 1px solid black;" id="inlogDiv">
     <h2>Inloggen</h2>
     <form action="">
       <label for="emailTelefoon">E-mailadres of telefoonnummer</label><br>
@@ -19,16 +51,16 @@
       <label for="wachtwoord">Wachtwoord</label><br>
       <input type="password" name="wachtwoord" id="wachtwoord" placeholder="Wachtwoord">
       <br>
-      <button>Wachtwoord vergeten</button>
+      <a style="color: red;" onclick="showHideDivs('pv');">Wachtwoord vergeten</a>
       <br>
       <input type="submit" value="Inloggen">
     </form>
     <button>Icon - Inloggen met Google</button>
-    <p>Nog geen account? <button>Registreer nu!</button></p>
+    <p>Nog geen account? <button onclick="showHideDivs('r');">Registreer nu!</button></p>
   </div>
 
   <!-- registreren -->
-  <div style="border: 1px solid black;">
+  <div style="border: 1px solid black; display: none;" id="registreerDiv">
     <h2>Registreren</h2>
     <form action="">
       <label for="naam">Naam</label><br>
@@ -45,11 +77,11 @@
       <br>
       <input type="submit" value="Registreren">
     </form>
-    <p>Al een account? <button>Meld u aan!</button></p>
+    <p>Al een account? <button onclick="showHideDivs('i');">Meld u aan!</button></p>
   </div>
 
   <!-- paswoord vergeten -->
-  <div style="border: 1px solid black;">
+  <div style="border: 1px solid black; display:none;" id="pasvergDiv">
     <h2>Paswoord vergeten</h2>
     <form action="">
       <label for="emailTelefoon">E-mailadres of telefoonnummer</label><br>
@@ -57,6 +89,7 @@
       <br>
       <input type="submit" value="Reset wachtwoord">
     </form>
+    <p><button onclick="showHideDivs('i');">Meld u aan!</button> of <button onclick="showHideDivs('r');">Registreer nu!</button></p>
   </div>
 
 </body>
