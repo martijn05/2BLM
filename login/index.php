@@ -50,13 +50,13 @@
     <div id="inlogDiv">
       <h2>Inloggen</h2>
       <form action="">
-        <label for="emailTelefoon">E-mailadres of telefoonnummer</label><br>
+        <!-- <label for="emailTelefoon">E-mailadres of telefoonnummer</label><br> -->
         <input type="text" name="emailTelefoon" id="emailTelefoon" placeholder="E-mailadres of telefoonnummer">
         <br>
-        <label for="wachtwoord">Wachtwoord</label><br>
+        <!-- <label for="wachtwoord">Wachtwoord</label><br> -->
         <input type="password" name="wachtwoord" id="wachtwoord" placeholder="Wachtwoord">
         <br>
-        <a style="color: red;" onclick="showHideDivs('pv');">Wachtwoord vergeten</a>
+        <a onclick="showHideDivs('pv');">Wachtwoord vergeten</a>
         <br>
         <input type="submit" value="Log in" id="LoginButton">
       </form>

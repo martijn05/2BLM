@@ -14,23 +14,50 @@ body
     height:120px;
 }
 
-#inlogDiv {
+#inlogDiv, #registreerDiv, #pasvergDiv
+{
     float: right;
     height: 500px;
     width: 450px;
     border: 1px solid black;
     background-color: white;
     border-radius: 25px;
+    margin: 50px;
 }
 
 h1
 {
     color:white;
+    margin-left:500px;
+    margin-top:200px;
+    font-size: 150px;
 }
 
 h2
 {
     text-align: center;
+}
+
+a
+{
+    color: red;
+    text-decoration: underline;
+}
+
+a, button, #LoginButton:hover
+{
+    cursor:pointer;
+}
+
+input::placeholder
+{
+    padding-left:10px;
+}
+
+label, input, a, #LoginGoogle, p
+{
+    margin-bottom:20px;
+    margin-left:50px;
 }
 
 input
@@ -41,9 +68,9 @@ input
     border-radius: 25px;
 }
 
-#emailTelefoon, #wachtwoord
+#emailTelefoon, #wachtwoord, #LoginButton, #LoginGoogle, #Registreer
 {
-    box-shadow: 50px 100px;
+    box-shadow: 5px 5px;
 }
 
 
