@@ -60,7 +60,6 @@
         <br>
         <input type="submit" value="Log in" id="LoginButton">
       </form>
-      <button id="LoginGoogle">Icon - Inloggen met Google</button>
       <p>Nog geen account? <button onclick="showHideDivs('r');" id="Registreer">Registreer nu!</button></p>
     </div>
   </div>
