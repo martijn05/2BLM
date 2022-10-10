@@ -53,11 +53,6 @@
         <!-- <label for="emailTelefoon">E-mailadres of telefoonnummer</label><br> -->
         <input type="text" name="emailTelefoon" id="emailTelefoon" placeholder="E-mailadres of telefoonnummer">
         <br>
-        <!-- <label for="wachtwoord">Wachtwoord</label><br> -->
-        <input type="password" name="wachtwoord" id="wachtwoord" placeholder="Wachtwoord">
-        <br>
-        <a onclick="showHideDivs('pv');">Wachtwoord vergeten</a>
-        <br>
         <input type="submit" value="Log in" id="LoginButton">
       </form>
       <p>Nog geen account? <button onclick="showHideDivs('r');" id="Registreer">Registreer nu!</button></p>
@@ -77,25 +72,9 @@
       <label for="tel">Telefoonnummer</label><br>
       <input type="" name="telefoon" id="telefoon" placeholder="Telefoonnummer">
       <br>
-      <label for="wachtwoord">Wachtwoord</label><br>
-      <input type="password" name="wachtwoord" id="wachtwoord" placeholder="Wachtwoord">
-      <br>
       <input type="submit" value="Registreren">
     </form>
     <p>Al een account? <button onclick="showHideDivs('i');">Meld u aan!</button></p>
   </div>
-
-  <!-- paswoord vergeten -->
-  <div style="border: 1px solid black; display:none;" id="pasvergDiv">
-    <h2>Paswoord vergeten</h2>
-    <form action="">
-      <label for="emailTelefoon">E-mailadres of telefoonnummer</label><br>
-      <input type="text" name="emailTelefoon" id="emailTelefoon" placeholder="E-mailadres of telefoonnummer">
-      <br>
-      <input type="submit" value="Reset wachtwoord">
-    </form>
-    <p><button onclick="showHideDivs('i');">Meld u aan!</button> of <button onclick="showHideDivs('r');">Registreer nu!</button></p>
-  </div>
-
 </body>
 </html>
