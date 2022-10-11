@@ -154,35 +154,32 @@ if (isset($_POST['login_user'])) {
       <h2>Inloggen</h2>
       <form action="" method="POST" id="loginMailForm">
         <input type="email" name="loginMail" id="loginMail" placeholder="E-mailadres" required>
-        <a onclick="showHideDivs('i-t');" id="loginTelKnop">Of aanmelden met telefoonnummer</a>
-        <br>
         <input type="submit" value="Log in" name="login_user" id="LoginButton">
+        <a onclick="showHideDivs('i-t');" id="loginTelKnop">Of aanmelden met telefoonnummer</a>
       </form>
       <form action="./" method="POST" id="loginTelForm" style="display:none;">
         <input type="tel" name="loginTel" id="loginTel" placeholder="Telefoonnummer" required>
-        <a onclick="showHideDivs('i-m');" id="loginMailKnop">Of aanmelden met e-mailadres</a>
-        <br>
         <input type="submit" value="Log in" name="login_user" id="LoginButton">
+        <a onclick="showHideDivs('i-m');" id="loginMailKnop">Of aanmelden met e-mailadres</a>
       </form>
       <?php 
         if (isset($userID) && ($userID == "NOTFOUND")){
           echo '<p style="margin-right: 20px;">Er is geen account gevonden met deze gegevens.</p>';
         }
       ?>
-      <p>Nog geen account? <button onclick="showHideDivs('r');" id="Registreer">Registreer nu!</button></p>
+      <div id="Registreren">
+        <p id="registreerP">Nog geen account? <a onclick="showHideDivs('r');" id="Registreer">Registreer nu!</a></p>
+      </div>
     </div>
 
     <!-- registreren -->
     <div style="border: 1px solid black; display: none;" id="registreerDiv">
       <h2>Registreren</h2>
       <form action="" method="POST">
-        <label for="naam">Naam</label><br>
         <input type="text" name="naam" id="naam" placeholder="Naam">
         <br>
-        <label for="email">E-mailadres</label><br>
         <input type="email" name="email" id="email" placeholder="E-mailadres">
         <br>
-        <label for="tel">Telefoonnummer</label><br>
         <input type="" name="telefoon" id="telefoon" placeholder="Telefoonnummer">
         <br>
         <input type="submit" name="register_user" value="Registreren">

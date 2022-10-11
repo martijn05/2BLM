@@ -39,13 +39,24 @@ h2
     text-align: center;
 }
 
+#registreerP
+{
+    margin-top:100px;
+    margin-left:0px;
+    text-align: center;
+}
+
 a
 {
-    color: red;
     text-decoration: underline;
 }
 
-a, button, #LoginButton:hover
+a:hover
+{
+    color:red;
+}
+
+a:hover, button:hover, #LoginButton:hover
 {
     cursor:pointer;
 }
@@ -61,6 +72,11 @@ label, input, a, #LoginGoogle, p
     margin-left:50px;
 }
 
+#loginTelKnop
+{
+    padding-top:150px;
+}
+
 input
 {
     border: 1px solid #070058;
@@ -69,13 +85,13 @@ input
     border-radius: 25px;
 }
 
-#emailTelefoon, #wachtwoord, #LoginButton, #LoginGoogle, #Registreer
+#emailTelefoon, #wachtwoord, #LoginButton, #LoginGoogle
 {
     box-shadow: 5px 5px;
 }
 
 
-#LoginButton, #LoginGoogle, #Registreer
+#LoginButton, #LoginGoogle
 {
     border: 1px solid black;
     background-color: #070058;
@@ -89,5 +105,11 @@ input
 
 #Registreer
 {
-    width: 250px;
+    font-weight: bold;
+}
+
+#Registreren
+{
+    left:50%;
+    right:50%;
 }
