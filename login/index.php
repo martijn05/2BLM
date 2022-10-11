@@ -154,15 +154,13 @@ if (isset($_POST['login_user'])) {
       <h2>Inloggen</h2>
       <form action="" method="POST" id="loginMailForm">
         <input type="email" name="loginMail" id="loginMail" placeholder="E-mailadres" required>
-        <a onclick="showHideDivs('i-t');" id="loginTelKnop">Of aanmelden met telefoonnummer</a>
-        <br>
         <input type="submit" value="Log in" name="login_user" id="LoginButton">
+        <a onclick="showHideDivs('i-t');" id="loginTelKnop">Of aanmelden met telefoonnummer</a>
       </form>
       <form action="./" method="POST" id="loginTelForm" style="display:none;">
         <input type="tel" name="loginTel" id="loginTel" placeholder="Telefoonnummer" required>
-        <a onclick="showHideDivs('i-m');" id="loginMailKnop">Of aanmelden met e-mailadres</a>
-        <br>
         <input type="submit" value="Log in" name="login_user" id="LoginButton">
+        <a onclick="showHideDivs('i-m');" id="loginMailKnop">Of aanmelden met e-mailadres</a>
       </form>
       <?php 
         if (isset($userID) && ($userID == "NOTFOUND")){
