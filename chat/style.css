@@ -1,0 +1,117 @@
+.title {
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 25px;
+}
+
+#overzicht {
+    width: 100%;
+}
+
+.partners {
+    width: 250px;
+    height: 400px;
+    overflow: auto;
+}
+
+#divToRefresh {
+    height: 310px;
+    width: 600px;
+    overflow: auto;
+}
+
+.partner_btn {
+    text-align: center;
+    width: 100%;
+    height: 50px;
+    outline: none;
+    border: 2px solid black;
+    border-radius: 25px;
+    margin-bottom: 10px;
+    font-size:15px;
+}
+
+.active {
+    background-color: green;
+    color: white;
+}
+
+#row {
+    width: 100%;
+    margin-bottom: 100px;
+    margin-top: 100px;
+}
+
+.column {
+    display: inline-block;
+}
+
+#column1 {
+    vertical-align: top;
+}
+
+#column2 {
+    margin-left: 600px;
+    width: 700px;
+}
+
+#conversation {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.geenStreepje {
+    border-radius: 25px;
+    background: #73AD21;
+    height: auto;
+    width: auto;
+    padding: 20px;
+    color: white;
+    margin-left: 300px;
+}
+
+.streepje {
+    border-radius: 25px;
+    background: #ADA8A8;
+    height: auto;
+    width: auto;
+    padding: 20px;
+    margin-right: 300px;
+}
+
+#message {
+    border-radius: 25px;
+    padding: 20px;
+    outline: none;
+    resize: none;
+    font-size:15px;
+}
+
+#send {
+    border-radius: 25px;
+    background-color: #4CAF50;
+    /* Green */
+    border: 2px solid #4CAF50;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    display: inline-block;
+    margin: 4px 2px;
+    transition-duration: 0.3s;
+    cursor: pointer;
+    vertical-align: top;
+    font-size:15px;
+}
+
+#send:hover {
+    background-color: white;
+    color: black;
+    border-color: #4CAF50;
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
