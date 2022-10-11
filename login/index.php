@@ -182,7 +182,7 @@ if (isset($_POST['login_user'])) {
         <input type="submit" name="register_user" value="Registreren" id="RegistreerButton">
       </form>
       <div id="Inloggen">
-        <p>Al een account? <a onclick="showHideDivs('i');" id="Login">Meld u aan!</a></p>
+        <p id="loginP">Al een account? <a onclick="showHideDivs('i');" id="Login">Meld u aan!</a></p>
       </div>
     </div>
   </div>

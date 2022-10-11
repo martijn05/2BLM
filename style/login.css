@@ -42,8 +42,12 @@ h2
 #registreerP
 {
     margin-top:100px;
+}
+
+#loginP, #registreerP
+{
     margin-left:0px;
-    text-align: center;
+    text-align: center; 
 }
 
 a
