@@ -48,7 +48,6 @@ h2
 
 a
 {
-    color: black;
     text-decoration: underline;
 }
 
@@ -71,6 +70,11 @@ label, input, a, #LoginGoogle, p
 {
     margin-bottom:20px;
     margin-left:50px;
+}
+
+#loginTelKnop
+{
+    padding-top:150px;
 }
 
 input
