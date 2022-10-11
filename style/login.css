@@ -72,11 +72,6 @@ label, input, a, p
     margin-left:50px;
 }
 
-#loginTelKnop
-{
-    padding-top:150px;
-}
-
 input
 {
     border: 1px solid #070058;
@@ -103,12 +98,12 @@ input
     margin-top: 10px;
 }
 
-#Registreer
+#Registreer, #Login
 {
     font-weight: bold;
 }
 
-#Registreren
+#Registreren, #Inloggen
 {
     left:50%;
     right:50%;

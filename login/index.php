@@ -181,7 +181,9 @@ if (isset($_POST['login_user'])) {
         <input type="" name="telefoon" id="telefoon" placeholder="Telefoonnummer">
         <input type="submit" name="register_user" value="Registreren" id="RegistreerButton">
       </form>
-      <p>Al een account? <button onclick="showHideDivs('i');">Meld u aan!</button></p>
+      <div id="Inloggen">
+        <p>Al een account? <a onclick="showHideDivs('i');" id="Login">Meld u aan!</a></p>
+      </div>
     </div>
   </div>
 </body>
