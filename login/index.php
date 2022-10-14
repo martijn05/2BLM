@@ -107,6 +107,7 @@ if (isset($_POST['login_user'])) {
   <title>2BLM | Inloggen</title>
   <link rel="stylesheet" href="../style/login.css">
   <link rel="stylesheet" href="../style/style.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 
 <script>
@@ -147,6 +148,7 @@ if (isset($_POST['login_user'])) {
   <div id="wrapper">
     <div id="block1">
       <h1>2BLM</h1>
+      <h3>In <i class="fas fa-heart"></i> met security</h3>
     </div>
 
     <!-- inloggen -->
