@@ -86,18 +86,13 @@ input::placeholder
     padding-left:10px;
 }
 
-/* input
-{
-} */
-
-
 label, input, a, p
 {
     margin-bottom:20px;
     margin-left:50px;
 }
 
-input
+input, #LoginButton, #RegistreerButton
 {
     border: 1px solid #070058;
     height: 50px;
@@ -115,10 +110,7 @@ input
 
 #LoginButton, #RegistreerButton
 {
-    border: 1px solid black;
     background-color: #070058;
-    height: 50px;
-    width: 350px;
     color: white;
     font-size: 20px;
     border-radius: 25px;
