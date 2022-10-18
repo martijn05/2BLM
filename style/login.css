@@ -92,14 +92,13 @@ label, input, a, p
     margin-left:50px;
 }
 
-input, #LoginButton, #RegistreerButton
+input
 {
     border: 1px solid #070058;
-    height: 50px;
-    width: 350px;
+    width: 80%;
     border-radius: 25px;
     font-size:17px;
-    padding-left:20px;
+    padding:10px;
 }
 
 #emailTelefoon, #wachtwoord, #LoginButton, #RegistreerButton
