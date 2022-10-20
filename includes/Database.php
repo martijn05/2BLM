@@ -2,7 +2,7 @@
     function connectWithDatabase()
     {
         //credentials
-        $dbServername = "127.0.0.1";
+        $dbServername = "127.0.0.1:8899";
         $dbUsername = "root";
         $dbPassword = "root";
         $dbName = "imslab";
