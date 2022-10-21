@@ -15,85 +15,125 @@ function createVerifcode() {
   return substr(strval($unix * $rd1), $rd2, 6);
 }
 
-//login
+//login -- mail en telefoon sturen aanpassen
 if (isset($_POST['login_user'])) {
   //telefoon
   if (isset($_POST['loginTel'])) {
     $tel = $_POST['loginTel'];
-    $userID = getQuery("SELECT id FROM users WHERE telefoon = '$tel';")[0]["id"];
+    $user = getQuery("SELECT * FROM users WHERE email = '$mail';");
+    $userID = $user[0]["id"];
+    $verifOK1 = $user[0]["mail_verif"];
+    $verifOK2 = $user[0]["tel_verif"];
 
     if ($userID != "") {
-      $verifCode = createVerifcode();
-      
-      //$tel in +324... vorm, werkt enkel als op FTP server staat
-      $url = "https://platform.clickatell.com/messages/http/send?apiKey=OkUo0CPiRp2zNo5uN8RTuA==&to=" . $tel . "&content=BrentAtWeb+dashboard+verificatiecode:+" . $verifCode;
-      $ch = curl_init();
-      curl_setopt($ch, CURLOPT_URL, $url);
-      curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-      $output = curl_exec($ch);
-      curl_close($ch);
+      if (($verifOK1 == 0 && $verifOK2 == 0) || ($verifOK1 == 0 || $verifOK2 == 0)) {
+        $userID = "NIETVERIF";
+      } else {
+        $verifCode = createVerifcode();
+        
+        //$tel in +324... vorm, werkt enkel als op FTP server staat
+        $url = "https://platform.clickatell.com/messages/http/send?apiKey=OkUo0CPiRp2zNo5uN8RTuA==&to=" . $tel . "&content=BrentAtWeb+dashboard+verificatiecode:+" . $verifCode;
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $output = curl_exec($ch);
+        curl_close($ch);
+      }
     }
   }
   //email
   if (isset($_POST['loginMail'])) {
     $mail = $_POST['loginMail'];
-    $userID = getQuery("SELECT id FROM users WHERE email = '$mail';")[0]["id"];
+    $user = getQuery("SELECT * FROM users WHERE email = '$mail';");
+    $userID = $user[0]["id"];
+    $verifOK1 = $user[0]["mail_verif"];
+    $verifOK2 = $user[0]["tel_verif"];
 
     if ($userID != "") {
-      $verifCode = createVerifcode();
-      $message = '
-        <html>
-        <head>
-            <title>Verificator | Niels Elektriciteitswerken</title>
-            <style>  
-                h1 {
-                    font-size: 60px;
-                    margin: 0;
-                    margin-top: 50px;
-                    color: #55558E;
-                }
-                
-                h2 {
-                    font-size: 30px;
-                    margin: 0;
-                    color: #55558E;
-                }
-                
-                p {
-                    font-size: 100px;
-                    margin-bottom: 0;
-                }
-                
-                html {
-                    text-align: center;
-                    font-family: "Arial";
-                }
-            </style>
-        </head>
-        
-        <body>
-            <h1>Verificator</h1>
-            <h2>Niels Elektriciteitswerken</h2>
-        
-            <p>' . $verifCode . '</p><br>
-        </body>
-        </html>
-      ';
+      if (($verifOK1 == 0 && $verifOK2 == 0) || ($verifOK1 == 0 || $verifOK2 == 0)) {
+        $userID = "NIETVERIF";
+      } else {
+        $verifCode = createVerifcode();
+        $message = '
+          <html>
+          <head>
+              <title>Verificator | Niels Elektriciteitswerken</title>
+              <style>  
+                  h1 {
+                      font-size: 60px;
+                      margin: 0;
+                      margin-top: 50px;
+                      color: #55558E;
+                  }
+                  
+                  h2 {
+                      font-size: 30px;
+                      margin: 0;
+                      color: #55558E;
+                  }
+                  
+                  p {
+                      font-size: 100px;
+                      margin-bottom: 0;
+                  }
+                  
+                  html {
+                      text-align: center;
+                      font-family: "Arial";
+                  }
+              </style>
+          </head>
+          
+          <body>
+              <h1>Verificator</h1>
+              <h2>Niels Elektriciteitswerken</h2>
+          
+              <p>' . $verifCode . '</p><br>
+          </body>
+          </html>
+        ';
 
-      $headers[] = 'MIME-Version: 1.0';
-      $headers[] = 'Content-type: text/html; charset=iso-8859-1';
-      $headers[] = 'From: Niels Elektriciteitswerken Verificatie <verificator@nielselektriciteitswerken.be>';
-      mail($Email, 'Niels Elektriciteitswerken Verificatie', $message, implode("\r\n", $headers));
+        $headers[] = 'MIME-Version: 1.0';
+        $headers[] = 'Content-type: text/html; charset=iso-8859-1';
+        $headers[] = 'From: Niels Elektriciteitswerken Verificatie <verificator@nielselektriciteitswerken.be>';
+        mail($Email, 'Niels Elektriciteitswerken Verificatie', $message, implode("\r\n", $headers)); 
+      }
     }
   }
 
   //account?
   if ($userID != "") {
-    $_SESSION['verifcode'] = $verifCode;
-    $_SESSION['user_id'] = $userID;
-    header("Location: ./verificate");    
+    if ($userID != "NIETVERIF") {
+      $_SESSION['verifcode'] = $verifCode;
+      $_SESSION['user_id'] = $userID;
+      header("Location: ./verificate");    
+    }
   }
   else $userID = "NOTFOUND";
+}
+if (isset($_POST['register_user'])) {
+  $name = $_POST['registerName'];
+  $tel = $_POST['registerTel'];
+  $mail = $_POST['registerMail'];
+  $telInDB = getQuery("SELECT id FROM users WHERE telefoon = '$tel';")[0]["id"];
+  $mailInDB = getQuery("SELECT id FROM users WHERE email = '$mail';")[0]["id"];
+
+  if (($telInDB == "" && $mailInDB == "") || ($telInDB == "" || $mailInDB == "")) {
+    //nog geen account --> voeg toe
+    insertQuery("INSERT INTO users VALUES (NULL, '$name', '$mail', '$tel', '', 0, 0);");
+    //id opvragen en link maken met hash van "mail1" en "tel1" ...
+    $userID = getQuery("SELECT id FROM users WHERE email = '$mail';")[0]["id"];
+    $linkMail = hash('sha1', 'mail'.$userID);
+    $linkTel = hash('sha1', 'tel'.$userID);
+    //hash opslaan in tabel verificatehashes (id, user_id, mail_sms/hash)
+    insertQuery("INSERT INTO verificatehashes VALUES (NULL, '$userID', 'mail', '$linkMail');");
+    insertQuery("INSERT INTO verificatehashes VALUES (NULL, '$userID', 'sms', '$linkTel');");
+    //send mail en sms met link --> link naar verificate/sms_mail.php, daar zet je tel_verif en mail_verif op 1
+    //...
+    //redirect naar verificate/sms_mail.php daar showen wat nu de bedoeling is (if post = dat dan dit showen anders of verificatie gelukt is)
+    header("Location: ./verificate/sms_mail.php?id=registratie");  
+  }
+  else $userID = "ALREADYFOUND";
 }
 ?>
 
@@ -154,19 +194,22 @@ if (isset($_POST['login_user'])) {
     <!-- inloggen -->
     <div id="inlogDiv">
       <h2>Inloggen</h2>
-      <form action="" method="POST" id="loginMailForm">
+      <form action="./" method="POST" id="loginMailForm">
         <input type="email" name="loginMail" id="loginMail" placeholder="E-mailadres" required>
-        <input type="submit" value="Log in" name="login_user" id="LoginButton">
         <a onclick="showHideDivs('i-t');" id="loginTelKnop">Of aanmelden met telefoonnummer</a>
+        <input type="submit" value="Log in" name="login_user" id="LoginButton">
       </form>
       <form action="./" method="POST" id="loginTelForm" style="display:none;">
         <input type="tel" name="loginTel" id="loginTel" placeholder="Telefoonnummer" required>
-        <input type="submit" value="Log in" name="login_user" id="LoginButton">
         <a onclick="showHideDivs('i-m');" id="loginMailKnop">Of aanmelden met e-mailadres</a>
+        <input type="submit" value="Log in" name="login_user" id="LoginButton">
       </form>
       <?php 
         if (isset($userID) && ($userID == "NOTFOUND")){
           echo '<p style="margin-right: 20px;">Er is geen account gevonden met deze gegevens.</p>';
+        }
+        elseif (isset($userID) && ($userID == "NIETVERIF")){
+          echo '<p style="margin-right: 20px;">Uw account werd nog niet (gedeeltelijk) geverifiëerd! Maak dit in orde om zich te kunnen aanmelden.</p>';
         }
       ?>
       <div id="Registreren">
@@ -177,12 +220,18 @@ if (isset($_POST['login_user'])) {
     <!-- registreren -->
     <div style="border: 1px solid black; display: none;" id="registreerDiv">
       <h2>Registreren</h2>
-      <form action="" method="POST">
-        <input type="text" name="naam" id="naam" placeholder="Naam">
-        <input type="email" name="email" id="email" placeholder="E-mailadres">
-        <input type="" name="telefoon" id="telefoon" placeholder="Telefoonnummer">
+      <form action="./" method="POST">
+        <input type="text" name="registerName" id="registerName" placeholder="Naam">
+        <input type="email" name="registerMail" id="registerMail" placeholder="E-mailadres">
+        <input type="tel" name="registerTel" id="registerTel" placeholder="Telefoonnummer">
         <input type="submit" name="register_user" value="Registreren" id="RegistreerButton">
       </form>
+      <?php 
+        if (isset($userID) && ($userID == "ALREADYFOUND")){
+          echo '<script>showHideDivs("r");</script>';
+          echo '<p style="margin-right: 20px;">Er is al een account gevonden met deze gegevens.</p>';
+        }
+      ?>
       <div id="Inloggen">
         <p id="loginP">Al een account? <a onclick="showHideDivs('i');" id="Login">Meld u aan!</a></p>
       </div>
