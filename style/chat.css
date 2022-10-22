@@ -15,7 +15,7 @@
 }
 
 #divToRefresh {
-    height: 310px;
+    height: 600px;
     width: 600px;
     overflow: auto;
 }
@@ -32,7 +32,7 @@
 }
 
 .active {
-    background-color: green;
+    background-color: #3F3FD3;
     color: white;
 }
 
@@ -63,7 +63,7 @@
 
 .geenStreepje {
     border-radius: 25px;
-    background: #73AD21;
+    background: #0092D6;
     height: auto;
     width: auto;
     padding: 20px;
@@ -90,9 +90,8 @@
 
 #send {
     border-radius: 25px;
-    background-color: #4CAF50;
-    /* Green */
-    border: 2px solid #4CAF50;
+    background-color: #3F3FD3;
+    border: 2px solid #3F3FD3;
     color: white;
     padding: 16px 32px;
     text-align: center;
@@ -107,7 +106,7 @@
 #send:hover {
     background-color: white;
     color: black;
-    border-color: #4CAF50;
+    border-color: #3F3FD3;
 }
 
 footer {
