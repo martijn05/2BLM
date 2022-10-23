@@ -8,7 +8,7 @@
     </head>
     <body>
     
-   <command><?php include 'header.html'; ?><command/>
+   <command><command/>
 
 
    
