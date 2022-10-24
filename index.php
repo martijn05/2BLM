@@ -25,7 +25,7 @@ session_start();
 
     <div class="user">
       <img src="./images/images.jpg" alt="user" class="imageuser"> 
-      <h3>Martijn coudyzer</h3>
+      <h3>Martijn Coudyzer</h3>
     </div>
 
     <div class="image">
@@ -38,9 +38,9 @@ session_start();
       <h4>Reacties</h4>
       <p>Brent Schillemans</p><p>Wat cool was ik daar ook maar!!!!!!!!!!!</p>
       <br>
-      <p>Batsiaan de mey</p><p>Hebben ze daar ook bier?</p>
+      <p>Bastiaan De Mey</p><p>Hebben ze daar ook bier?</p>
       <br>
-      <p>Lina stroobants</p><p>joepiiii</p>
+      <p>Lina Stroobants</p><p>joepiiii</p>
     </div>
       
       
