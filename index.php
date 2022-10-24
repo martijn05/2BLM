@@ -24,7 +24,7 @@ session_start();
   <div class="post">
 
     <div class="user">
-      <img src="./images/images.jpg" alt="user" class="imageuser"> 
+      <img src="./images/profielfoto.jpg" alt="user" class="imageuser"> 
       <h3>Martijn Coudyzer</h3>
     </div>
 
