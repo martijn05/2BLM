@@ -31,6 +31,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Chat</title>
     <link rel="stylesheet" href="../style/chat.css">
+    <link rel="stylesheet" type="text/css" href="../style/navbar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
@@ -43,10 +44,23 @@
     ?>
 
     <?php 
-        // $UiD = $_SESSION['user_id'];
-        $Uid = 1;
+        $Uid = $_SESSION['user_id'];
         $idOfRec = 0;
     ?>
+
+    <nav>
+        <div class="navbar">
+            <img src="../images/Logo.gif" alt="Logo 2BLM">
+
+            <div class="navitems">
+                <a href="../">Overzicht</a>
+                <a href="../mijnprofiel/">Profiel</a>
+                <a href="../vrienden/">Vrienden</a>
+                <a href="" style="text-decoration: underline;">Chat</a>
+                <a href="../login/logout.php" style="color: red;">Uitloggen</a>
+            </div>
+        </div>
+    </nav>
     
     <div id="row">
         <div class="column" id="column1">

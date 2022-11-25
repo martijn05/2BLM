@@ -1,14 +1,10 @@
 <?php
 session_start();
 include_once("../../includes/Database.php");
-// if (!isset($_SESSION['verifcode'])) { 
-// 	die(header("Location: ../"));
-// 	exit;
-// }
-// if (isset($_SESSION['loggedIn'])) {
-// 	header('Location: ../../');
-// 	exit;
-// }
+if (isset($_SESSION['loggedIn'])) {
+	header('Location: ../../');
+	exit;
+}
 
 $mode = "failed";
 

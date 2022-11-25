@@ -2,9 +2,7 @@
     include_once("../includes/Database.php");
     session_start();
     $idOfReciever = $_SESSION['chatReceId'];
-    // $idOfReciever = 2;
-    // $UiD = $_SESSION['user_id'];
-    $UiD = 1;
+    $UiD = $_SESSION['user_id'];
 
     $result = getQuery("SELECT user_verz_id, tekst FROM chats WHERE (user_verz_id, user_ont_id) IN (('$UiD','$idOfReciever'),('$idOfReciever','$UiD'));");
 

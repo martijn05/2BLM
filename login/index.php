@@ -2,10 +2,10 @@
 session_start();
 include_once("../includes/Database.php");
 
-// if (isset($_SESSION['loggedIn'])) {
-//   header('Location: ../');
-//   exit;
-// }
+if (isset($_SESSION['loggedIn'])) {
+  header('Location: ../');
+  exit;
+}
 
 function createVerifcode() {
   $unix = time();
@@ -20,7 +20,7 @@ if (isset($_POST['login_user'])) {
   //telefoon
   if (isset($_POST['loginTel'])) {
     $tel = $_POST['loginTel'];
-    $user = getQuery("SELECT * FROM users WHERE email = '$mail';");
+    $user = getQuery("SELECT * FROM users WHERE telefoon = '$tel';");
     $userID = $user[0]["id"];
     $verifOK1 = $user[0]["mail_verif"];
     $verifOK2 = $user[0]["tel_verif"];
@@ -32,7 +32,7 @@ if (isset($_POST['login_user'])) {
         $verifCode = createVerifcode();
         
         //$tel in +324... vorm, werkt enkel als op FTP server staat
-        $url = "https://platform.clickatell.com/messages/http/send?apiKey=OkUo0CPiRp2zNo5uN8RTuA==&to=" . $tel . "&content=BrentAtWeb+dashboard+verificatiecode:+" . $verifCode;
+        $url = "https://platform.clickatell.com/messages/http/send?apiKey=OkUo0CPiRp2zNo5uN8RTuA==&to=" . $tel . "&content=Uw+2BLM+verificatiecode+is:+" . $verifCode;
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -57,19 +57,19 @@ if (isset($_POST['login_user'])) {
         $message = '
           <html>
           <head>
-              <title>Verificator | Niels Elektriciteitswerken</title>
+              <title>Verificatie | 2BLM</title>
               <style>  
                   h1 {
                       font-size: 60px;
                       margin: 0;
                       margin-top: 50px;
-                      color: #55558E;
+                      color: #070058;
                   }
                   
                   h2 {
                       font-size: 30px;
                       margin: 0;
-                      color: #55558E;
+                      color: #070058;
                   }
                   
                   p {
@@ -85,18 +85,18 @@ if (isset($_POST['login_user'])) {
           </head>
           
           <body>
-              <h1>Verificator</h1>
-              <h2>Niels Elektriciteitswerken</h2>
+              <h1>2BLM</h1>
+              <h2>Verificatie</h2>
           
-              <p>' . $verifCode . '</p><br>
+              <p>Uw verificatiecode is: ' . $verifCode . '</p><br>
           </body>
           </html>
         ';
 
         $headers[] = 'MIME-Version: 1.0';
         $headers[] = 'Content-type: text/html; charset=iso-8859-1';
-        $headers[] = 'From: Niels Elektriciteitswerken Verificatie <verificator@nielselektriciteitswerken.be>';
-        mail($Email, 'Niels Elektriciteitswerken Verificatie', $message, implode("\r\n", $headers)); 
+        $headers[] = 'From: 2BLM Verificatie <2blm@brentatweb.be>';
+        mail($mail, '2BLM Verificatie', $message, implode("\r\n", $headers)); 
       }
     }
   }
@@ -129,8 +129,61 @@ if (isset($_POST['register_user'])) {
     insertQuery("INSERT INTO verificatehashes VALUES (NULL, '$userID', 'mail', '$linkMail');");
     insertQuery("INSERT INTO verificatehashes VALUES (NULL, '$userID', 'sms', '$linkTel');");
     //send mail en sms met link --> link naar verificate/sms_mail.php, daar zet je tel_verif en mail_verif op 1
-    //...
-    //redirect naar verificate/sms_mail.php daar showen wat nu de bedoeling is (if post = dat dan dit showen anders of verificatie gelukt is)
+    //tel
+    $link = "https://www.brentatweb.be/2BLM/login/verificate/sms_mail.php?id=".$linkTel;
+    $url = "https://platform.clickatell.com/messages/http/send?apiKey=OkUo0CPiRp2zNo5uN8RTuA==&to=".$tel."&content=Klik+op+volgende+link+om+u+te+verifiëren+bij+2BLM:+".$link;
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    $output = curl_exec($ch);
+    curl_close($ch);
+
+    //mail
+    $link = "https://www.brentatweb.be/2BLM/login/verificate/sms_mail.php?id=".$linkMail;
+    $message = '
+          <html>
+          <head>
+              <title>Verificatie | 2BLM</title>
+              <style>  
+                  h1 {
+                      font-size: 60px;
+                      margin: 0;
+                      margin-top: 50px;
+                      color: #070058;
+                  }
+                  
+                  h2 {
+                      font-size: 30px;
+                      margin: 0;
+                      color: #070058;
+                  }
+                  
+                  p {
+                      font-size: 100px;
+                      margin-bottom: 0;
+                  }
+                  
+                  html {
+                      text-align: center;
+                      font-family: "Arial";
+                  }
+              </style>
+          </head>
+          
+          <body>
+              <h1>2BLM</h1>
+              <h2>Verificatie</h2>
+          
+              <p>Klik <a href="'.$link.'">hier</a> om u te verifieren bij 2BLM.</p><br>
+          </body>
+          </html>
+        ';
+
+        $headers[] = 'MIME-Version: 1.0';
+        $headers[] = 'Content-type: text/html; charset=iso-8859-1';
+        $headers[] = 'From: 2BLM Verificatie <2blm@brentatweb.be>';
+        mail($mail, '2BLM Verificatie', $message, implode("\r\n", $headers)); 
+
     header("Location: ./verificate/sms_mail.php?id=registratie");  
   }
   else $userID = "ALREADYFOUND";

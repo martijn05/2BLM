@@ -1,13 +1,13 @@
 <?php
 session_start();
-// if (!isset($_SESSION['verifcode'])) {
-// 	die(header("Location: ../"));
-// 	exit;
-// }
-// if (isset($_SESSION['loggedIn'])) {
-// 	header('Location: ../../');
-// 	exit;
-// }
+if (!isset($_SESSION['verifcode'])) {
+	die(header("Location: ../"));
+	exit;
+}
+if (isset($_SESSION['loggedIn'])) {
+	header('Location: ../../');
+	exit;
+}
 
 $verifCode = $_SESSION['verifcode'];
 
@@ -46,6 +46,7 @@ if (isset($_POST['verificate'])) {
 				<br>
 				<input type="submit" value="Ga door" name="verificate" id="verifButton">
 			</form>
+
 			<?php echo $verifCode; ?>
 		</div>
 	</div>

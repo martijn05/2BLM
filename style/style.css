@@ -1,7 +1,11 @@
 /* hierin komt de gedeelde style */
 @font-face {
-    font-family: Gagalin;
+    font-family: 'Gagalin';
     src: url(../fonts/Gagalin-Regular.otf);
+}
+
+body {
+    margin: 0;
 }
 
 h1

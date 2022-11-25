@@ -4,6 +4,8 @@ session_start();
 // 	header('Location: ./login');
 // 	exit;
 // }
+$userID = $_SESSION['user_id'];
+include_once("./includes/Database.php");
 ?>
 
 <!DOCTYPE html>
@@ -13,38 +15,65 @@ session_start();
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="./style/homepage.css">
+  <link rel="stylesheet" type="text/css" href="./style/style.css">
+  <link rel="stylesheet" type="text/css" href="./style/navbar.css">
   <title>2BLM</title>
   
 </head>
 <body>
-  <?php include 'header.html';?>
-  <!-- homepage -->
-  <h1>2BLM - Homepage</h1>
-  
-  <div class="post">
-
-    <div class="user">
-      <img src="./images/profielfoto.jpg" alt="user" class="imageuser"> 
-      <h3>Martijn Coudyzer</h3>
-    </div>
-
-    <div class="image">
-      <img src="./images/zee.jpg" alt="zee" class="imagepost">
-      <h4 class="likes"><span class="aantallikes">4</span> vind-ik-leuks</h4>
-      <p>Ik ben naar zee geweest yeeey</p>
-    </div>
-
-    <div class="reacties">
-      <h4>Reacties</h4>
-      <p>Brent Schillemans</p><p>Wat cool was ik daar ook maar!!!!!!!!!!!</p>
-      <br>
-      <p>Bastiaan De Mey</p><p>Hebben ze daar ook bier?</p>
-      <br>
-      <p>Lina Stroobants</p><p>joepiiii</p>
-    </div>
-    
-
+  <nav>
+    <div class="navbar">
+      <img src="./images/Logo.gif" alt="Logo 2BLM">
       
+      <div class="navitems">
+        <a href="" style="text-decoration: underline;">Overzicht</a>
+        <a href="./mijnprofiel/">Profiel</a>
+        <a href="./vrienden/">Vrienden</a>
+        <a href="./chat/">Chat</a>
+        <a href="./login/logout.php" style="color: red;">Uitloggen</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- homepage -->
+  <div class="posts">
+    <?php
+      if ($_GET["post"] == "success") {
+    ?>
+    <div class="success">
+      <h2>Uw post werd succesvol geplaatst!</h2>
+    </div>
+    <?php
+      }
+      else {
+    ?>
+    <div class="makePost">
+      <h2>Schrijf een post!</h2>
+      <form action="./controllers/post.php" method="POST" enctype="multipart/form-data">
+        <label for="imagePost">Upload een foto:</label>
+        <input type="file" name="imagePost" id="imagePost" accept="image/*" required>
+        <textarea name="textPost" id="textPost" placeholder="Uw tekstje:" required></textarea><br><br>
+        <input type="submit" value="Posten">
+      </form>
+    </div>
+    <?php
+      }
+
+      $posts = getQuery("SELECT * FROM v_posts WHERE user_id IN (SELECT id_2 FROM vrienden WHERE status = 'a' AND id_1 = $userID) ORDER BY datum DESC;");
+      foreach ($posts as $post) {
+    ?>
+      <div class="postBericht">
+        <p><img src="<?php echo $post["profiel_img_url"]; ?>" class="imageuser"> <a href='./account?id=<?php echo $post['user_id']; ?>' class="postUserNaam"><?php echo $post["naam"]; ?></a></p>
+
+        <img src="<?php echo $post["foto_url"]; ?>" class="imagepost">
+        <h4 class="likes"><span class="aantallikes"></span>Likes ???</h4>
+        <p><?php echo $post["tekst"]; ?></p>
+        <p>Reacties ????</p>
+        <br><br>
+      </div>
+    <?php
+      }
+    ?>
   </div>
 </body>
 </html>

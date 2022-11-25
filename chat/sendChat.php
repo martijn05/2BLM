@@ -3,8 +3,7 @@
 
     include_once("../includes/Database.php");
 
-    // $senderId = $_SESSION['user_id'];
-    $senderId = 1;
+    $senderId = $_SESSION['user_id'];;
     $receId = $_SESSION['chatReceId'];
     $message = $_POST['message'];
 
