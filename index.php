@@ -75,5 +75,9 @@ include_once("./includes/Database.php");
       }
     ?>
   </div>
+
+  <footer>
+    (c) 2BLM | Wij maken gebruik van externe lettertypes | <a href="./privacy/">Privacyverklaring</a>
+  </footer>
 </body>
 </html>
