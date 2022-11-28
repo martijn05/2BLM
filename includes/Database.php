@@ -2,16 +2,16 @@
     function connectWithDatabase()
     {
         // //credentials Lina
-        // $dbServername = "127.0.0.1:8899";
-        // $dbUsername = "root";
-        // $dbPassword = "root";
-        // $dbName = "imslab";
-
-        // //credentials Brent
-        $dbServername = "127.0.0.1";
+        $dbServername = "127.0.0.1:8899";
         $dbUsername = "root";
         $dbPassword = "root";
         $dbName = "imslab";
+
+        // //credentials Brent
+        // $dbServername = "127.0.0.1";
+        // $dbUsername = "root";
+        // $dbPassword = "root";
+        // $dbName = "imslab";
 
         //credentials Online
         // $dbServername = "brentatweb.be.mysql";
