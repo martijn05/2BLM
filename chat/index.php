@@ -54,7 +54,7 @@
 
             <div class="navitems">
                 <a href="../">Overzicht</a>
-                <a href="../mijnprofiel/">Profiel</a>
+                <a href="../profiel/">Profiel</a>
                 <a href="../vrienden/">Vrienden</a>
                 <a href="" style="text-decoration: underline;">Chat</a>
                 <a href="../login/logout.php" style="color: red;">Uitloggen</a>
