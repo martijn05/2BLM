@@ -12,6 +12,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>2BLM | Vrienden</title>
     <link rel="stylesheet" type="text/css" href="../style/navbar.css">
+    <link rel="stylesheet" type="text/css" href="../style/style.css">
+    <link rel="stylesheet" type="text/css" href="../style/vrienden.css">    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
@@ -67,7 +69,7 @@
         <!-- zoeken -->
         <h1>Zoeken naar mensen</h1>
         <form action="./" method="GET">
-            <input type="text" name="search" id="search"><br>
+            <input type="text" name="search" id="search">
             <input type="submit" value="Zoeken">
         </form><br>
 
