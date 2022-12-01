@@ -50,8 +50,9 @@ include_once("./includes/Database.php");
     <div class="makePost">
       <h2>Schrijf een post!</h2>
       <form action="./controllers/post.php" method="POST" enctype="multipart/form-data">
-        <label for="imagePost">Upload een foto:</label>
-        <input type="file" name="imagePost" id="imagePost" accept="image/*" required>
+        <label for="imagePost" class="file">Upload een foto:
+          <input type="file" name="imagePost" id="imagePost" accept="image/*" aria-label="File browser example" required>
+        </label>  
         <textarea name="textPost" id="textPost" placeholder="Uw tekstje:" required></textarea><br><br>
         <input type="submit" value="Posten">
       </form>
