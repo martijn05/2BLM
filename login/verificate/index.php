@@ -25,6 +25,7 @@ if (isset($_POST['verificate'])) {
 <head>
 	<title>2BLM | Verificate</title>
 	<link rel="stylesheet" type="text/css" href="../../style/login.css">
+	<link rel="stylesheet" type="text/css" href="../../style/style.css">
 	<link rel="stylesheet" href="../../style/verificate.css">
 	<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
