@@ -49,11 +49,12 @@
 
 #column1 {
     vertical-align: top;
-    margin-left:20px;
+    width: 200px;
+    margin-left:40px;
 }
 
 #column2 {
-    margin-left: 600px;
+    margin-left: 700px;
     width: 700px;
 }
 
