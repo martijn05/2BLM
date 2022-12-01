@@ -33,3 +33,21 @@ button
     width: 200px;
     cursor:pointer;
 }
+
+p
+{
+    font-size: 15px;
+    font-family: 'Gagalin';
+}
+
+footer {
+    padding: 20px 0px;
+    width: 100%;
+    background-color: #070058;
+    color: white;
+    text-align: center;
+}
+
+footer a {
+    color: white !important;
+}

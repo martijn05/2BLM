@@ -25,13 +25,6 @@ h1
     font-family: 'Gagalin';
 }
 
-p
-{
-    font-size: 15px;
-    font-weight: bold;
-}
-
-
 button
 {
     background-color: #070058;
@@ -42,4 +35,21 @@ button
     margin-right:5px;
     width: 200px;
     cursor:pointer;
+}
+
+.row
+{
+    width:100%;
+}
+
+.c1
+{
+    width: 50%;
+    float:left;
+}
+
+.c2
+{
+    width: 50%;
+    float:right;
 }

@@ -91,47 +91,50 @@
             }
         ?>
 
-        
-        <!-- vrienden -->
-        <h1>Mijn vrienden</h1>
-        <?php 
-            $vrienden = getQuery("SELECT id, naam, profiel_img_url FROM users WHERE id IN (SELECT id_2 FROM vrienden WHERE status = 'a' AND id_1 = '$UiD');");
-            if (count($vrienden) > 0) {
-            foreach ($vrienden as $vriend) {
-        ?>
-            <div class="vriend">
-                <img src="<?php echo $vriend["profiel_img_url"]; ?>" height="40px">
-                <p><?php echo $vriend["naam"]; ?></p>
-                <button onclick="location.href='../account?id=<?php echo $vriend['id']; ?>';">Bekijk profiel</button>
-                <button onclick="location.href='./?chat=<?php echo $vriend['id']; ?>';">Chatten</button>
-                <button onclick="location.href='./?delete=<?php echo $vriend['id']; ?>';">Verwijder vriend</button>
-                <br><br><br>
+        <div class="row">
+            <div class="c1">
+                <!-- vrienden -->
+                <h1>Mijn vrienden</h1>
+                <?php 
+                    $vrienden = getQuery("SELECT id, naam, profiel_img_url FROM users WHERE id IN (SELECT id_2 FROM vrienden WHERE status = 'a' AND id_1 = '$UiD');");
+                    if (count($vrienden) > 0) {
+                    foreach ($vrienden as $vriend) {
+                ?>
+                    <div class="vriend">
+                        <img src="<?php echo $vriend["profiel_img_url"]; ?>" height="40px">
+                        <p><?php echo $vriend["naam"]; ?></p>
+                        <button onclick="location.href='../account?id=<?php echo $vriend['id']; ?>';">Bekijk profiel</button><br>
+                        <button onclick="location.href='./?chat=<?php echo $vriend['id']; ?>';">Chatten</button><br>
+                        <button onclick="location.href='./?delete=<?php echo $vriend['id']; ?>';">Verwijder vriend</button>
+                        <br><br><br>
+                    </div>
+                <?php
+                    }}
+                    else echo "<p>Geen vrienden gevonden</p>";
+                ?>
             </div>
-        <?php
-            }}
-            else echo "<p>Geen vrienden gevonden</p>";
-        ?>
-        
-        
-        <!-- verzoeken -->
-        <h1>Verzoeken</h1>
-        <?php 
-            $verzoeken = getQuery("SELECT id, naam, profiel_img_url FROM users WHERE id IN (SELECT id_1 FROM vrienden WHERE status = 'p' AND id_2 = '$UiD');");
-            if (count($verzoeken) > 0) {
-            foreach ($verzoeken as $verzoek) {
-        ?>
-            <div class="verzoek">
-                <img src="<?php echo $verzoek["profiel_img_url"]; ?>" height="40px">
-                <p><?php echo $verzoek["naam"]; ?></p>
-                <button onclick="location.href='../account?id=<?php echo $verzoek['id']; ?>';">Bekijk profiel</button>
-                <button onclick="location.href='./?accept=<?php echo $verzoek['id']; ?>';">Accepteren</button>
-                <button onclick="location.href='./?ignore=<?php echo $verzoek['id']; ?>';">Negeren</button>
-                <br><br><br>
+            <div class="c2">
+                <!-- verzoeken -->
+                <h1>Verzoeken</h1>
+                <?php 
+                    $verzoeken = getQuery("SELECT id, naam, profiel_img_url FROM users WHERE id IN (SELECT id_1 FROM vrienden WHERE status = 'p' AND id_2 = '$UiD');");
+                    if (count($verzoeken) > 0) {
+                    foreach ($verzoeken as $verzoek) {
+                ?>
+                    <div class="verzoek">
+                        <img src="<?php echo $verzoek["profiel_img_url"]; ?>" height="40px">
+                        <p><?php echo $verzoek["naam"]; ?></p>
+                        <button onclick="location.href='../account?id=<?php echo $verzoek['id']; ?>';">Bekijk profiel</button><br>
+                        <button onclick="location.href='./?accept=<?php echo $verzoek['id']; ?>';">Accepteren</button><br>
+                        <button onclick="location.href='./?ignore=<?php echo $verzoek['id']; ?>';">Negeren</button>
+                        <br><br><br>
+                    </div>
+                <?php
+                    }}
+                    else echo "<p>Geen vriendschapsverzoeken gevonden</p>";
+                ?>
             </div>
-        <?php
-            }}
-            else echo "<p>Geen vriendschapsverzoeken gevonden</p>";
-        ?>
+        </div>
     </div>
 
     <script src="./checkHeight.js"></script>

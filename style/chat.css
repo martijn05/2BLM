@@ -2,6 +2,7 @@
     font-weight: bold;
     text-decoration: underline;
     font-size: 25px;
+    font-family:'Gagalin';
 }
 
 #overzicht {
@@ -21,14 +22,16 @@
 }
 
 .partner_btn {
-    text-align: center;
-    width: 100%;
-    height: 50px;
-    outline: none;
-    border: 2px solid black;
-    border-radius: 25px;
-    margin-bottom: 10px;
-    font-size:15px;
+    text-align: center !important;
+    width: 100% !important;
+    height: 50px !important;
+    outline: none !important;
+    border: 2px solid black !important;
+    border-radius: 25px !important;
+    margin-bottom: 10px !important;
+    font-size:15px !important;
+    background-color: lightgray;
+    color:black;
 }
 
 .active {
@@ -38,8 +41,6 @@
 
 #row {
     width: 100%;
-    margin-bottom: 100px;
-    margin-top: 100px;
 }
 
 .column {
@@ -48,6 +49,7 @@
 
 #column1 {
     vertical-align: top;
+    margin-left:20px;
 }
 
 #column2 {
