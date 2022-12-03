@@ -12,6 +12,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Profiel</title>
     <link rel="stylesheet" type="text/css" href="../style/navbar.css">
+    <link rel="stylesheet" type="text/css" href="../style/style.css">
+    <link rel="stylesheet" type="text/css" href="../style/account.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
@@ -97,20 +99,20 @@
             <?php 
                 if ($status == "niet") {
             ?>
-                    <button onclick="location.href='./?verzoek=<?php echo $profiel['id']; ?>';">Stuur vriendschapsverzoek</button>
+                <button onclick="location.href='./?verzoek=<?php echo $profiel['id']; ?>';">Stuur vriendschapsverzoek</button>
             <?php
                 } elseif ($status == "pendingWeg") {
             ?>
-                    <p><strong>Vriendschapsverzoek aangevraagd!</strong></p>
+                <p><strong>Vriendschapsverzoek aangevraagd!</strong></p>
             <?php      
                 } elseif ($status == "pendingNaar") {
             ?>
-                    <button onclick="location.href='./?accept=<?php echo $profiel['id']; ?>';">Accepteren</button>
+                <button onclick="location.href='./?accept=<?php echo $profiel['id']; ?>';">Accepteren</button>
                 <button onclick="location.href='./?ignore=<?php echo $profiel['id']; ?>';">Negeren</button>
             <?php      
                 } elseif ($status == "vriend") {
             ?>
-                    <button onclick="location.href='./?chat=<?php echo $profiel['id']; ?>';">Chatten</button>
+                <button onclick="location.href='./?chat=<?php echo $profiel['id']; ?>';">Chatten</button>
             <?php      
                 }
             ?>

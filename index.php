@@ -59,8 +59,9 @@ include_once("./includes/Database.php");
     <div class="makePost">
       <h2>Schrijf een post!</h2>
       <form action="./controllers/post.php" method="POST" enctype="multipart/form-data">
-        <label for="imagePost">Upload een foto:</label>
-        <input type="file" name="imagePost" id="imagePost" accept="image/*" required>
+        <label for="imagePost" class="file">Upload een foto:
+          <input type="file" name="imagePost" id="imagePost" accept="image/*" aria-label="File browser example" required>
+        </label>  
         <textarea name="textPost" id="textPost" placeholder="Uw tekstje:" required></textarea><br><br>
         <input type="submit" value="Posten">
       </form>
@@ -73,12 +74,10 @@ include_once("./includes/Database.php");
     ?>
       <div class="postBericht">
         <p><img src="<?php echo $post["profiel_img_url"]; ?>" class="imageuser"> <a href='./account?id=<?php echo $post['user_id']; ?>' class="postUserNaam"><?php echo $post["naam"]; ?></a></p>
-
         <img src="<?php echo $post["foto_url"]; ?>" class="imagepost">
         <h4 class="likes"><span class="aantallikes"></span>Likes ???</h4>
         <p><?php echo $post["tekst"]; ?></p>
         <p>Reacties ????</p>
-        <br><br>
       </div>
     <?php
       }

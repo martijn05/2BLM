@@ -1,0 +1,55 @@
+input[type="text"]
+{
+    width: 500px;
+    height: 20px;
+    border-radius: 25px;
+    padding: 15px;
+    font-size: 15px;
+    border: 3px solid #070058;
+}
+
+input[type="submit"]
+{
+    font-size: 20px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    background-color: #070058;
+    color: white;
+    padding: 15px;
+}
+
+h1
+{
+    font-size: 25px;
+    font-family: 'Gagalin';
+}
+
+button
+{
+    background-color: #070058;
+    color: white;
+    font-size: 20px;
+    border-radius: 25px;
+    margin-top: 5px;
+    margin-right:5px;
+    width: 200px;
+    cursor:pointer;
+}
+
+.row
+{
+    width:100%;
+}
+
+.c1
+{
+    width: 50%;
+    float:left;
+}
+
+.c2
+{
+    width: 50%;
+    float:right;
+}
