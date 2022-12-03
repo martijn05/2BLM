@@ -48,20 +48,12 @@ include_once("./includes/Database.php");
       else {
     ?>
 
-    
-    <div class="modal">
-      Wij maken gebruik van externe lettertypes. <br>
-      <button>Pefect!</button>
-    </div>
-    <div class="waas"></div>
-
-
     <div class="makePost">
       <h2>Schrijf een post!</h2>
       <form action="./controllers/post.php" method="POST" enctype="multipart/form-data">
         <label for="imagePost" class="file">Upload een foto:
-          <input type="file" name="imagePost" id="imagePost" accept="image/*" aria-label="File browser example" required>
-        </label>  
+          <input type="file" name="imagePost" id="imagePost" accept="image/*" required>
+        </label>  <br>
         <textarea name="textPost" id="textPost" placeholder="Uw tekstje:" required></textarea><br><br>
         <input type="submit" value="Posten">
       </form>

@@ -238,6 +238,11 @@ if (isset($_POST['register_user'])) {
 </script>
 
 <body>
+  <div class="modal" id="modal">
+    Wij maken gebruik van externe lettertypes. <br>
+    <button onclick="document.getElementById('modal').style.display = 'none';">Pefect!</button>
+  </div>
+
   <div id="wrapper">
     <div id="block1">
       <h1>2BLM</h1>

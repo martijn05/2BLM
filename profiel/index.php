@@ -24,12 +24,7 @@
         // }
         $UiD = $_SESSION['user_id'];
 
-        if (isset($_GET["accept"])) {
-            $id = $_GET["accept"];
-            insertQuery("UPDATE vrienden SET status = 'a' WHERE (id_1 = '$id') and (id_2 = '$UiD');");
-            insertQuery("INSERT INTO vrienden VALUES ('$UiD', '$id', 'a');");
-            header('Location: ./');
-        }
+        $user = getQuery("SELECT * FROM users WHERE id = '$UiD';")[0];
     ?>
 
     <nav>
@@ -47,17 +42,23 @@
     </nav>
     
     <div class="pagecontent">
-        <h1>Uw Naam</h1>
-        <form action="./" method="POST">
-            <label for=""></label><br>
-            <input type="text" name="" id=""><br><br>
+        <h1>Profiel</h1>
+        <img src="<?php echo $user["profiel_img_url"]; ?>" alt=""><br>
+        <form action="../controllers/updateAccount.php" method="POST" enctype="multipart/form-data">
+            <input type="file" name="imagePost" id="imagePost" accept="image/*"><br><br>
 
-            <label for=""></label><br>
-            <input type="tel" name="" id=""><br><br>
+            <label for="name">Uw naam</label><br>
+            <input type="text" name="name" id="name" value="<?php echo $user["naam"]; ?>" required><br><br>
 
-            <label for=""></label><br>
-            <input type="text" name="" id=""><br><br>
+            <label for="tel">Uw telefoonnummer</label><br>
+            <input type="tel" name="tel" id="tel" value="<?php echo $user["telefoon"]; ?>" required><br><br>
+
+            <label for="mail">Uw e-mailadres</label><br>
+            <input type="mail" name="mail" id="mail" value="<?php echo $user["email"]; ?>" required><br><br>
+
+            <input type="submit" value="Opslaan">
         </form>
+        <p>Let op, bij het wijzigen van uw telefoonnummer en/of e-mailadres moet uw account opnieuw geverifieerd worden en wordt dit tijdelijk geblokkeerd tot de verificatie succesvol werd afgerond.</p>
     </div>
 
     <script src="./checkHeight.js"></script>
