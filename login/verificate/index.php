@@ -43,12 +43,10 @@ if (isset($_POST['verificate'])) {
 			<h2>Verificatie</h2>
 			<p>Er werd u een verificatiecode per sms/e-mail gestuurd. Vul deze hieronder in: </p>
 			<form action="./" method="POST">
-				<input type="number" name="logincode" id="logincode" placeholder="Verificatiecode" required>
+				<input type="number" name="logincode" id="logincode" placeholder="Verificatiecode" required value="<?php echo $verifCode; ?>">
 				<br>
 				<input type="submit" value="Ga door" name="verificate" id="verifButton">
 			</form>
-
-			<?php echo $verifCode; ?>
 		</div>
 	</div>
 </body>
