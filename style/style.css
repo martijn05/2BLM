@@ -22,27 +22,6 @@ h3
     width: 500px;
 }
 
-<<<<<<< HEAD
-
-.waas {
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #FFFFFFAA;
-    left: 0;
-    position: absolute;
-    z-index: 90;
-}
-
-.modal {
-    width: fit-content;
-    text-align: center;
-    padding: 10px;
-    position: absolute;
-    right: 20px;
-    z-index: 100;
-    bottom: 20px;
-=======
 button
 {
     background-color: #070058;
@@ -71,5 +50,24 @@ footer {
 
 footer a {
     color: white !important;
->>>>>>> d2a2af64476117984d77dfdad65bee90efa2c4c4
+}
+
+.waas {
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #FFFFFFAA;
+    left: 0;
+    position: absolute;
+    z-index: 90;
+}
+
+.modal {
+    width: fit-content;
+    text-align: center;
+    padding: 10px;
+    position: absolute;
+    right: 20px;
+    z-index: 100;
+    bottom: 20px;
 }
