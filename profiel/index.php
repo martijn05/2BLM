@@ -18,10 +18,10 @@
 <body>
 
     <?php
-        // if (!isset($_SESSION['loggedIn'])) {
-        // 	header('Location: ../login');
-        // 	exit;
-        // }
+        if (!isset($_SESSION['loggedIn'])) {
+        	header('Location: ../login');
+        	exit;
+        }
         $UiD = $_SESSION['user_id'];
 
         $user = getQuery("SELECT * FROM users WHERE id = '$UiD';")[0];

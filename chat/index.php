@@ -38,10 +38,10 @@
 <body>
 
     <?php
-    // if (!isset($_SESSION['loggedIn'])) {
-    // 	header('Location: ../login');
-    // 	exit;
-    // }
+    if (!isset($_SESSION['loggedIn'])) {
+    	header('Location: ../login');
+    	exit;
+    }
     ?>
 
     <?php 

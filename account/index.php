@@ -19,10 +19,10 @@
 <body>
 
     <?php
-    // if (!isset($_SESSION['loggedIn'])) {
-    // 	header('Location: ../login');
-    // 	exit;
-    // }
+        if (!isset($_SESSION['loggedIn'])) {
+            header('Location: ../login');
+            exit;
+        }
         $UiD = $_SESSION['user_id'];
 
         if (isset($_GET["id"])) {

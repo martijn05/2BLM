@@ -1,9 +1,9 @@
 <?php 
 session_start();
-// if (!isset($_SESSION['loggedIn'])) {
-// 	header('Location: ./login');
-// 	exit;
-// }
+if (!isset($_SESSION['loggedIn'])) {
+	header('Location: ./login');
+	exit;
+}
 $userID = $_SESSION['user_id'];
 include_once("./includes/Database.php");
 ?>
