@@ -40,7 +40,7 @@ include_once("./includes/Database.php");
     <?php
       if ($_GET["post"] == "success") {
     ?>
-    <div class="success">
+    <div class="success" onclick="window.location.href = './';">
       <h2>Uw post werd succesvol geplaatst!</h2>
     </div>
     <?php
