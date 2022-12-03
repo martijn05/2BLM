@@ -30,3 +30,24 @@ h3
     font-size: 50px;
     width: 500px;
 }
+
+
+.waas {
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #FFFFFFAA;
+    left: 0;
+    position: absolute;
+    z-index: 90;
+}
+
+.modal {
+    width: fit-content;
+    text-align: center;
+    padding: 10px;
+    position: absolute;
+    right: 20px;
+    z-index: 100;
+    bottom: 20px;
+}

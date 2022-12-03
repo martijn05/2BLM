@@ -47,6 +47,15 @@ include_once("./includes/Database.php");
       }
       else {
     ?>
+
+    
+    <div class="modal">
+      Wij maken gebruik van externe lettertypes. <br>
+      <button>Pefect!</button>
+    </div>
+    <div class="waas"></div>
+
+
     <div class="makePost">
       <h2>Schrijf een post!</h2>
       <form action="./controllers/post.php" method="POST" enctype="multipart/form-data">
@@ -77,7 +86,7 @@ include_once("./includes/Database.php");
   </div>
 
   <footer>
-    (c) 2BLM | Wij maken gebruik van externe lettertypes | <a href="./privacy/">Privacyverklaring</a>
+    &copy; 2BLM | <a href="./privacy/">Privacyverklaring</a>
   </footer>
 </body>
 </html>
