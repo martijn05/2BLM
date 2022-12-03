@@ -258,7 +258,7 @@ if (isset($_POST['register_user'])) {
         <input type="submit" value="Log in" name="login_user" id="LoginButton">
       </form>
       <form action="./" method="POST" id="loginTelForm" style="display:none;">
-        <input type="tel" name="loginTel" id="loginTel" placeholder="Telefoonnummer" required>
+        <input type="tel" name="loginTel" id="loginTel" placeholder="Telefoonnummer" value="+32" required>
         <a onclick="showHideDivs('i-m');" id="loginMailKnop">Of aanmelden met e-mailadres</a>
         <input type="submit" value="Log in" name="login_user" id="LoginButton">
       </form>
@@ -281,7 +281,7 @@ if (isset($_POST['register_user'])) {
       <form action="./" method="POST">
         <input type="text" name="registerName" id="registerName" placeholder="Naam">
         <input type="email" name="registerMail" id="registerMail" placeholder="E-mailadres">
-        <input type="tel" name="registerTel" id="registerTel" placeholder="Telefoonnummer">
+        <input type="tel" name="registerTel" id="registerTel" placeholder="Telefoonnummer" value="+32">
         <input type="submit" name="register_user" value="Registreren" id="RegistreerButton">
       </form>
       <?php 

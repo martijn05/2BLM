@@ -113,7 +113,33 @@
                 } elseif ($status == "vriend") {
             ?>
                 <button onclick="location.href='./?chat=<?php echo $profiel['id']; ?>';">Chatten</button>
+                <button onclick="document.getElementById('vriendenVanVrienden').style.display = 'block';">Bekijk vrienden</button>
             <?php      
+                }
+            ?>
+        </div>
+        <div id="vriendenVanVrienden" style="display: none;">
+            <hr>
+            <?php 
+                if ($status == "vriend") {
+                    $vriendenvv = getQuery("SELECT id, naam, profiel_img_url FROM users WHERE id IN (SELECT id_2 FROM vrienden WHERE status = 'a' AND id_1 = '$accountID');");
+            ?>
+                <button onclick="document.getElementById('vriendenVanVrienden').style.display = 'none';">Sluiten</button>
+                <h2>Vrienden:</h2>
+            
+            <?php 
+                if (count($vriendenvv) > 0) {
+                foreach ($vriendenvv as $vriendvv) {
+            ?>
+                <div class="vriend">
+                    <img src="<?php echo $vriendvv["profiel_img_url"]; ?>" height="40px">
+                    <p><?php echo $vriendvv["naam"]; ?></p>
+                </div>
+            <?php
+                }}
+                else echo "<p>Geen vrienden gevonden</p>";
+            ?>
+            <?php
                 }
             ?>
         </div>
@@ -126,10 +152,7 @@
             ?>
                         <div class="postBericht">
                             <img src="<?php echo $post["foto_url"]; ?>" class="imagepost">
-                            <h4 class="likes"><span class="aantallikes"></span>Likes ???</h4>
                             <p><?php echo $post["tekst"]; ?></p>
-                            <p>Reacties ????</p>
-                            <br><br>
                         </div>
             <?php
                         }
