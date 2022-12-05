@@ -240,7 +240,7 @@ if (isset($_POST['register_user'])) {
 <body>
   <div class="modal" id="modal">
     Wij maken gebruik van externe lettertypes. <br>
-    <button onclick="document.getElementById('modal').style.display = 'none';">Pefect!</button>
+    <button onclick="document.getElementById('modal').style.display = 'none';">Perfect!</button>
   </div>
 
   <div id="wrapper">
