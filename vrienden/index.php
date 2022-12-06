@@ -67,7 +67,7 @@
     
     <div class="pagecontent">
         <!-- zoeken -->
-        <h1>Zoeken naar mensen</h1>
+        <h1 id="PeopleSearch">Zoeken naar mensen</h1>
         <form action="./" method="GET">
             <input type="text" name="search" id="search">
             <input type="submit" value="Zoeken">
