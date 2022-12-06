@@ -97,13 +97,11 @@ input
 
 #LoginButton, #RegistreerButton
 {
-    background-color: #070058;
     box-shadow: 5px 5px #3F3FD3;
-    color: white;
     font-size: 20px;
-    border-radius: 25px;
     margin-top: 30px;
     width: 200px;
+    padding:10px;
 }
 
 #Registreer, #Login
