@@ -28,14 +28,14 @@ if (isset($_POST['verificate'])) {
 	<link rel="stylesheet" type="text/css" href="../../style/style.css">
 	<link rel="stylesheet" href="../../style/verificate.css">
 	<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
-	<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
 	<div id="wrapper">
 		<div id="block1">
 			<h1>2BLM</h1>
-			<h3>In <i class="fas fa-heart"></i> met security</h3>
+			<h3>In <i class="fa fa-heart"></i> met security</h3>
 		</div>
 
 		<!-- verificatie -->

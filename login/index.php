@@ -200,7 +200,7 @@ if (isset($_POST['register_user'])) {
   <title>2BLM | Inloggen</title>
   <link rel="stylesheet" href="../style/login.css">
   <link rel="stylesheet" href="../style/style.css">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <script>
@@ -246,7 +246,7 @@ if (isset($_POST['register_user'])) {
   <div id="wrapper">
     <div id="block1">
       <h1>2BLM</h1>
-      <h3>In <i class="fas fa-heart"></i> met security</h3>
+      <h3>In <i class="fa fa-heart"></i> met security</h3>
     </div>
 
     <!-- inloggen -->
@@ -267,7 +267,7 @@ if (isset($_POST['register_user'])) {
           echo '<p style="margin-right: 20px; color: red;">Er is geen account gevonden met deze gegevens.</p>';
         }
         elseif (isset($userID) && ($userID == "NIETVERIF")){
-          echo '<p style="margin-right: 20px;">Uw account werd nog niet (gedeeltelijk) geverifiëerd! Maak dit in orde om zich te kunnen aanmelden.</p>';
+          echo '<p style="margin-right: 20px; color: red;">Uw account werd nog niet (gedeeltelijk) geverifiëerd! Maak dit in orde om zich te kunnen aanmelden.</p>';
         }
       ?>
       <div id="Registreren">
