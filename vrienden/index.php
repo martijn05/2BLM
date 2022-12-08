@@ -104,7 +104,7 @@
                         <img src="<?php echo $vriend["profiel_img_url"]; ?>" height="40px">
                         <p><?php echo $vriend["naam"]; ?></p>
                         <button onclick="location.href='../account?id=<?php echo $vriend['id']; ?>';">Bekijk profiel</button><br>
-                        <button onclick="location.href='./?chat=<?php echo $vriend['id']; ?>';">Chatten</button><br>
+                        <button onclick="location.href='../?chat=<?php echo $vriend['id']; ?>';">Chatten</button><br>
                         <button onclick="location.href='./?delete=<?php echo $vriend['id']; ?>';">Verwijder vriend</button>
                         <br><br><br>
                     </div>

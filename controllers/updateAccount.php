@@ -12,7 +12,7 @@
   $oldmail = $user["email"];
   $oldtel = $user["telefoon"];
 
-  if (isset($_FILES["imagePost"])) {
+  if ($_FILES["imagePost"]["name"] != "") {
     // image
     $directory = "../images/profiel/";
     $imageID = hash("sha256", "profielfoto_".(count(glob($directory . "*")) + 1));
@@ -35,7 +35,7 @@
     }
 
     // Check file size
-    if ($_FILES["imagePost"]["size"] > 1000000) {
+    if ($_FILES["imagePost"]["size"] > 10000000) {
     echo "Sorry, your file is too large.";
     $uploadOk = 0;
     }
@@ -55,24 +55,21 @@
       if (move_uploaded_file($_FILES["imagePost"]["tmp_name"], $target_dir.$imageID.".".$imageFileType)) {
         $imageUrl = $target_dir.$imageID.".".$imageFileType;
 
-        date_default_timezone_set('UTC');
-        $date = date("Y-m-d H:i:s");
-
         if ($oldmail != $email && $oldtel != $oldtel) {
           //send mail
           //send sms
-          insertQuery("UPDATE users SET naam = '$naam', email = '$email', telefoon = '$tel', profiel_img_url = '$imageUrl', tel_verif = '0', mail_verif = '0' WHERE (id = '$userID');");
+          insertQuery("UPDATE users SET naam = '$naam', email = '$email', telefoon = '$tel', profiel_img_url = '$imageUrl', tel_verif = '0', mail_verif = '0' WHERE id = '$userID';");
         }
         elseif ($oldmail != $email) {
           //send mail
-          insertQuery("UPDATE users SET naam = '$naam', email = '$email', profiel_img_url = '$imageUrl', mail_verif = '0' WHERE (id = '$userID');");
+          insertQuery("UPDATE users SET naam = '$naam', email = '$email', profiel_img_url = '$imageUrl', mail_verif = '0' WHERE id = '$userID';");
         }
         elseif ($oldtel != $tel) {
           //send sms
-          insertQuery("UPDATE users SET naam = '$naam', telefoon = '$tel', profiel_img_url = '$imageUrl', tel_verif = '0' WHERE (id = '$userID');");
+          insertQuery("UPDATE users SET naam = '$naam', telefoon = '$tel', profiel_img_url = '$imageUrl', tel_verif = '0' WHERE id = '$userID';");
         }
         else {
-          insertQuery("UPDATE users SET naam = '$naam', profiel_img_url = '$imageUrl' WHERE (id = '$userID');");
+          insertQuery("UPDATE users SET naam = '$naam', profiel_img_url = '$imageUrl' WHERE id = '$userID';");
         }
 
       } else {
@@ -98,4 +95,4 @@
     }
   }
   
-  header("Location: ../profiel/");
+  echo "<script>window.location.href = '../profiel/';</script>";

@@ -27,7 +27,7 @@
 
         if (isset($_GET["id"])) {
             $_SESSION["accountID"] = $_GET["id"];
-            header("Location: ./");
+            echo "<script>window.location.href = './';</script>";
         }
         else if ($_SESSION["accountID"]) {
             $accountID = $_SESSION["accountID"];
@@ -57,24 +57,24 @@
         if (isset($_GET["verzoek"])) {
             $id = $_GET["verzoek"];
             insertQuery("INSERT INTO vrienden VALUES ('$UiD', '$id', 'p');");
-            header('Location: ./');
+            echo "<script>window.location.href = './';</script>";
         }
         if (isset($_GET["chat"])) {
             $id = $_GET["chat"];
             $already = getQuery("SELECT * FROM chats WHERE (user_verz_id = '$UiD' AND user_ont_id = '$id') OR (user_verz_id = '$id' AND user_ont_id = '$UiD');");
             if ($already == []) insertQuery("INSERT INTO chats VALUES (NULL,'$UiD','$id','Hallo, ik wil graag chatten met jou!',current_timestamp());");
-            header('Location: ../chat/');
+            echo "<script>window.location.href = '../chat/';</script>";
         }
         if (isset($_GET["accept"])) {
             $id = $_GET["accept"];
             insertQuery("UPDATE vrienden SET status = 'a' WHERE (id_1 = '$id') and (id_2 = '$UiD');");
             insertQuery("INSERT INTO vrienden VALUES ('$UiD', '$id', 'a');");
-            header('Location: ./');
+            echo "<script>window.location.href = './';</script>";
         }
         if (isset($_GET["ignore"])) {
             $id = $_GET["ignore"];
             insertQuery("DELETE FROM vrienden WHERE (id_1 = '$id') and (id_2 = '$UiD');");
-            header('Location: ./');
+            echo "<script>window.location.href = './';</script>";
         }
     ?>
 
@@ -162,7 +162,5 @@
             ?>
         </div>
     </div>
-
-    <script src="./checkHeight.js"></script>
 </body>
 </html>

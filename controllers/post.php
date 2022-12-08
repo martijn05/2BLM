@@ -32,7 +32,7 @@
   }
 
   // Check file size
-  if ($_FILES["imagePost"]["size"] > 1000000) {
+  if ($_FILES["imagePost"]["size"] > 10000000) {
   echo "Sorry, your file is too large.";
   $uploadOk = 0;
   }
@@ -58,10 +58,9 @@
 
       insertQuery("INSERT INTO posts VALUES (null, '$text','$imageUrl','$date','$userID');");
 
-      echo "<script>window.location.href = '../?post=success';</script>";
     } else {
       echo "Sorry, there was an error uploading your file.";
     }
   }
   
-  echo "<br><a href='../'>Ga terug naar het overzicht</a>";
+  echo "<script>window.location.href = '../?post=success';</script>";
