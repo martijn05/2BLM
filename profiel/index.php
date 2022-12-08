@@ -44,7 +44,7 @@
     
     <div class="pagecontent">
         <h1>Profiel</h1>
-        <img src="<?php echo $user["profiel_img_url"]; ?>" alt=""><br>
+        <img src="<?php echo $user["profiel_img_url"]; ?>" class="profielimage"><br>
         <form action="../controllers/updateAccount.php" method="POST" enctype="multipart/form-data">
             <input type="file" name="imagePost" id="imagePost" accept="image/*"><br><br>
 

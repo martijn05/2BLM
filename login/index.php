@@ -264,7 +264,7 @@ if (isset($_POST['register_user'])) {
       </form>
       <?php 
         if (isset($userID) && ($userID == "NOTFOUND")){
-          echo '<p style="margin-right: 20px;">Er is geen account gevonden met deze gegevens.</p>';
+          echo '<p style="margin-right: 20px; color: red;">Er is geen account gevonden met deze gegevens.</p>';
         }
         elseif (isset($userID) && ($userID == "NIETVERIF")){
           echo '<p style="margin-right: 20px;">Uw account werd nog niet (gedeeltelijk) geverifiëerd! Maak dit in orde om zich te kunnen aanmelden.</p>';
