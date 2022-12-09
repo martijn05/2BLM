@@ -5,7 +5,7 @@
   // text
   $text = $_POST["textPost"];
   // image
-  $directory = "../images/posts/";
+  $directory = "./images/posts/";
   $imageID = hash("sha256", "postfoto_".(count(glob($directory . "*")) + 1));
 
   $target_dir = "../images/posts/";

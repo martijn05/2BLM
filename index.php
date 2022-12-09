@@ -63,9 +63,10 @@ include_once("./includes/Database.php");
 
       $posts = getQuery("SELECT * FROM v_posts WHERE user_id IN (SELECT id_2 FROM vrienden WHERE status = 'a' AND id_1 = $userID) ORDER BY datum DESC;");
       foreach ($posts as $post) {
+        $userIMG = preg_replace('/./', '', $post["profiel_img_url"], 1);
     ?>
       <div class="postBericht">
-        <p><img src="<?php echo $post["profiel_img_url"]; ?>" class="imageuser"> <a href='./account?id=<?php echo $post['user_id']; ?>' class="postUserNaam"><?php echo $post["naam"]; ?></a></p>
+        <p><img src="<?php echo $userIMG; ?>" class="imageuser"> <a href='./account?id=<?php echo $post['user_id']; ?>' class="postUserNaam"><?php echo $post["naam"]; ?></a></p>
         <img src="<?php echo $post["foto_url"]; ?>" class="imagepost">
         <p><?php echo $post["tekst"]; ?></p>
       </div>
