@@ -29,7 +29,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <title>Chat</title>
+    <title>2BLM | Chat</title>
+    <link rel="shortcut icon" href="../images/Logo.gif" type="image/x-icon">
     <link rel="stylesheet" href="../style/chat.css">
     <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" type="text/css" href="../style/navbar.css">

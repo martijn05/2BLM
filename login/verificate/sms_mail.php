@@ -48,6 +48,7 @@ else {
 
 <head>
 	<title>2BLM | Verificatie</title>
+  <link rel="shortcut icon" href="../../images/Logo.gif" type="image/x-icon">
 	<link rel="stylesheet" type="text/css" href="../../style/login.css">
   <link rel="stylesheet" type="text/css" href="../../style/style.css">
 	<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">

@@ -18,6 +18,7 @@ include_once("./includes/Database.php");
   <link rel="stylesheet" type="text/css" href="./style/style.css">
   <link rel="stylesheet" type="text/css" href="./style/navbar.css">
   <title>2BLM</title>
+  <link rel="shortcut icon" href="./images/Logo.gif" type="image/x-icon">
   
 </head>
 <body>

@@ -23,7 +23,8 @@ if (isset($_POST['verificate'])) {
 <html>
 
 <head>
-	<title>2BLM | Verificate</title>
+	<title>2BLM | Verificatie</title>
+  <link rel="shortcut icon" href="../../images/Logo.gif" type="image/x-icon">
 	<link rel="stylesheet" type="text/css" href="../../style/login.css">
 	<link rel="stylesheet" type="text/css" href="../../style/style.css">
 	<link rel="stylesheet" href="../../style/verificate.css">

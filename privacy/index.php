@@ -3,7 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Privacy</title>
+        <title>2BLM | Privacy</title>
+        <link rel="shortcut icon" href="../images/Logo.gif" type="image/x-icon">
         <link rel="stylesheet" href="../style/navbar.css">
     </head>
     

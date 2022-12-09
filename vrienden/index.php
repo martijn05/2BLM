@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>2BLM | Vrienden</title>
+    <link rel="shortcut icon" href="../images/Logo.gif" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="../style/navbar.css">
     <link rel="stylesheet" type="text/css" href="../style/style.css">
     <link rel="stylesheet" type="text/css" href="../style/vrienden.css">    
