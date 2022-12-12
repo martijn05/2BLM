@@ -48,7 +48,7 @@
             $already = getQuery("SELECT * FROM chats WHERE (user_verz_id = '$UiD' AND user_ont_id = '$id') OR (user_verz_id = '$id' AND user_ont_id = '$UiD');");
             if ($already == []) insertQuery("INSERT INTO chats VALUES (NULL,'$UiD','$id','Hallo, ik wil graag chatten met jou!',current_timestamp());");
             $_SESSION['chatReceId'] = $id;
-            header('Location: ../chat/');
+            echo "<script>window.location.href = '../chat/';</script>";
         }
     ?>
 
@@ -105,7 +105,7 @@
                         <img src="<?php echo $vriend["profiel_img_url"]; ?>" height="40px">
                         <p><?php echo $vriend["naam"]; ?></p>
                         <button onclick="location.href='../account?id=<?php echo $vriend['id']; ?>';">Bekijk profiel</button><br>
-                        <button onclick="location.href='../?chat=<?php echo $vriend['id']; ?>';">Chatten</button><br>
+                        <button onclick="location.href='./?chat=<?php echo $vriend['id']; ?>';">Chatten</button><br>
                         <button onclick="location.href='./?delete=<?php echo $vriend['id']; ?>';">Verwijder vriend</button>
                         <br><br><br>
                     </div>
@@ -137,6 +137,10 @@
             </div>
         </div>
     </div>
+
+    <footer>
+        &copy; 2BLM | <a href="../privacy/">Privacyverklaring</a>
+    </footer>
 
     <script src="./checkHeight.js"></script>
 </body>

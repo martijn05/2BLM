@@ -105,5 +105,10 @@
             echo "<script>setActive(".$_SESSION['chatReceId'].")</script>";
         }
     ?>
+
+    <footer>
+        &copy; 2BLM | <a href="../privacy/">Privacyverklaring</a>
+    </footer>
+
 </body>
 </html>

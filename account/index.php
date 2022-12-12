@@ -100,7 +100,7 @@
             <?php 
                 if ($status == "niet") {
             ?>
-                <button onclick="location.href='./?verzoek=<?php echo $profiel['id']; ?>';">Stuur vriendschapsverzoek</button>
+                <button style="width: 300px !important;" onclick="location.href='./?verzoek=<?php echo $profiel['id']; ?>';">Stuur vriendschapsverzoek</button>
             <?php
                 } elseif ($status == "pendingWeg") {
             ?>
@@ -163,5 +163,9 @@
             ?>
         </div>
     </div>
+
+    <footer>
+        &copy; 2BLM | <a href="../privacy/">Privacyverklaring</a>
+    </footer>
 </body>
 </html>
