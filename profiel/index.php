@@ -63,10 +63,9 @@
         <p>Let op, bij het wijzigen van uw telefoonnummer en/of e-mailadres moet uw account opnieuw geverifieerd worden en wordt dit tijdelijk geblokkeerd tot de verificatie succesvol werd afgerond.</p>
     </div>
 
-    <footer>
+    <footer id="footer">
         &copy; 2BLM | <a href="../privacy/">Privacyverklaring</a>
     </footer>
-
-    <script src="./checkHeight.js"></script>
+    <script src="../scripts/checkHeightFooter.js"></script>
 </body>
 </html>

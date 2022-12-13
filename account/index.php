@@ -164,8 +164,9 @@
         </div>
     </div>
 
-    <footer>
+    <footer id="footer">
         &copy; 2BLM | <a href="../privacy/">Privacyverklaring</a>
     </footer>
+    <script src="../scripts/checkHeightFooter.js"></script>
 </body>
 </html>

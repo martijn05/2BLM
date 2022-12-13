@@ -90,9 +90,10 @@
         <h1>10. Nog vragen?</h1>
             <p>Indien u na het lezen van deze Data Protection Notice verdere vragen of opmerkingen heeft met betrekking tot de verzameling en verwerking van uw persoonsgegevens, kan u contact opnemen met 2BLM per e-mail aan <a href="mailto:info@2blm.be">info@2blm.be</a>.</p>
 
-        <footer>
+        <footer id="footer">
             &copy; 2BLM | <a href="../privacy/">Privacyverklaring</a>
         </footer>
+        <script src="../scripts/checkHeightFooter.js"></script>
 
     </body>
 </html>
