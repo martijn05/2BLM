@@ -19,6 +19,16 @@
 </head>
 <body>
 
+    <script>
+        function deleteItem(id) {
+            xmlhttp = new XMLHttpRequest();
+            xmlhttp.open(
+                "GET","../controllers/deletePost.php?id=" + id, true
+            );
+            xmlhttp.send();
+            window.location.reload();
+        }
+    </script>
     <?php
         if (!isset($_SESSION['loggedIn'])) {
         	header('Location: ../login');
@@ -61,6 +71,27 @@
             <input type="submit" value="Opslaan">
         </form>
         <p>Let op, bij het wijzigen van uw telefoonnummer en/of e-mailadres moet uw account opnieuw geverifieerd worden en wordt dit tijdelijk geblokkeerd tot de verificatie succesvol werd afgerond.</p>
+    </div>
+
+    <div class="pagecontent">
+        <h1>Mijn posts</h1>
+        <div class="posts">
+            <?php 
+                $posts = getQuery("SELECT * FROM posts WHERE user_id = '$UiD';");
+                if ($posts != []) {
+                    foreach ($posts as $post) {
+            ?>
+                    <div class="postBericht">
+                        <p style="margin-top: 0; text-align: right;"><i class="fa fa-trash-o" aria-hidden="true" style="cursor: pointer;" onclick=<?php echo "javascript:deleteItem(".$post['id'].")"; ?>></i></p> 
+                        <img src="<?php echo '.'.$post["foto_url"]; ?>" class="imagepost">
+                        <p><?php echo $post["tekst"]; ?></p>
+                    </div>
+            <?php
+                    }
+                }
+                else echo "<p>U hebt nog geen posts.</p>";
+            ?>
+        </div>
     </div>
 
     <footer id="footer">
