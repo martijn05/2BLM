@@ -47,7 +47,6 @@ if (isset($_POST['verificate'])) {
 				<input type="number" name="logincode" id="logincode" placeholder="Verificatiecode" required>
 				<br>
 				<input type="submit" value="Ga door" name="verificate" id="verifButton">
-				<?php echo $verifCode; ?>
 			</form>
 			<?php 
 				if (isset($_POST['verificate'])) {
